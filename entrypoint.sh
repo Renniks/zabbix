@@ -15,4 +15,4 @@ echo "==> Tailing logs..."
 tail -f \
     /var/log/zabbix/*.log \
     /var/log/mysql/error.log \
-    tail /var/log/nginx/error.log
+    /var/log/nginx/error.log
