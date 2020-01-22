@@ -13,10 +13,14 @@ sed -i "s/^\; max_input_vars = 1000/max_input_vars = 10000/" /etc/php/7.2/fpm/ph
 sed -i 's/^\;opcache.enable=1/opcache.enable=0/' /etc/php/7.2/fpm/php.ini
 echo "PHP configuration complete"
 
+# Make sure database is up and running
+/etc/init.d/mysql restart
+sleep 5
+
 echo "Creating database zabbix"
 mysql -v <<SQL
 CREATE DATABASE zabbix CHARACTER SET UTF8 COLLATE UTF8_BIN;
-CREATE USER zabbix@localhost IDENTIFIED BY 'DBPassword';
+CREATE USER zabbix@localhost IDENTIFIED BY '$DBPassword';
 GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost;
 FLUSH PRIVILEGES;
 SQL
