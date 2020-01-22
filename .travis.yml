@@ -1,0 +1,23 @@
+os: linux
+language: python
+
+services:
+- docker
+env:
+    global:
+        - COMMIT=${TRAVIS_COMMIT::8}
+install:
+        
+script:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- export REPO=renniks/zabbix
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+- docker build -t $REPO:$COMMIT .
+
+after_success:
+- docker ps
+- docker image ls
+- docker tag $REPO:$COMMIT $REPO:$TAG
+- docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+- docker push $REPO
+
