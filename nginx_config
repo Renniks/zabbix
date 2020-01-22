@@ -1,9 +1,8 @@
 server {
-        listen 80;
-
+        listen 80 default_server;
         root /usr/share/zabbix;
-
         index index.php index.html index.htm
+        server_name _;
 
         location / {
                 try_files $uri $uri/ =404;
@@ -13,6 +12,4 @@ server {
                 include snippets/fastcgi-php.conf;
                 fastcgi_pass unix:/run/php/php7.2-fpm.sock;
         }
-
 }
-
