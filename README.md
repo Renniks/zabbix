@@ -20,7 +20,7 @@ A Docker container launched from this image will not contain any data or configu
 ### Deployment
 
 ##### You can simply run the latest version of the image with:
-```sh
+```
 docker run –it –p 8080:80 renniks/zabbix:latest
 ```
 In this example, we simply map port 80 of the Docker container to the host's 8080 port.
@@ -28,7 +28,7 @@ So Zabbix will be accessible via a web browser at your host IP address on port 8
  > http://127.0.0.1:8080
 
 ##### Or build your own with:
-```sh
+```
 git clone https://github.com/Renniks/zabbix
 cd zabbix/
 docker build –t your_image_name .
@@ -38,5 +38,5 @@ docker run –it –p 8080:80 your_image_name
 Again, it will be accessible via a web browser at your host IP address on port 8080. 
  > http://127.0.0.1:8080
 
->  The repository is implemented with TravisCI .travis.yml
-So any commit to master branch causes the image to be automatically built and updated on DockerHub.
+> The repository is implemented with TravisCI .travis.yml
+> So any commit to master branch causes the image to be automatically built and updated on DockerHub.
