@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Database user password can be changed here
-DBPassword="somesequrep4ssw0rd"
+DBPassword="zabbixpassword"
 
 # Setup zabbix pre-requisites for php.ini
 echo "Starting PHP configuration"
