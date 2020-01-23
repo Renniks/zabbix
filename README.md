@@ -32,7 +32,9 @@ So Zabbix will be accessible via a web browser at your host IP address on port 8
 git clone https://github.com/Renniks/zabbix
 cd zabbix/
 docker build –t your_image_name .
+```
 and run it with:
+```
 docker run –d –p 8080:80 your_image_name
 ```
 Again, it will be accessible via a web browser at your host IP address on port 8080. 
