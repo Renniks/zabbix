@@ -1,5 +1,5 @@
-# Docker-zabbix
-[![Build Status](https://travis-ci.org/Renniks/zabbix.svg?branch=master)](https://travis-ci.org/Renniks/zabbix)
+# Docker-zabbix [![Build Status](https://travis-ci.org/Renniks/zabbix.svg?branch=master)](https://travis-ci.org/Renniks/zabbix)
+
 This project provides self-contained instance of Zabbix for development and testing purposes.
 The Docker file is based on Ubuntu 18.04, which will be used to build an image consisting of: 
 - Nginx
