@@ -27,13 +27,13 @@ In this example, we map port 80 of the Docker container to the host's 8080 port.
 So Zabbix will be accessible via a web browser at your host IP address on port 8080. 
  > http://127.0.0.1:8080
 
-##### Or build your own with:
+##### Or build your own:
 ```
 git clone https://github.com/Renniks/zabbix
 cd zabbix/
 docker build –t your_image_name .
 ```
-and run it with:
+##### and run it:
 ```
 docker run –d –p 8080:80 your_image_name
 ```
