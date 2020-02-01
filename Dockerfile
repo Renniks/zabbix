@@ -13,7 +13,7 @@ RUN echo exit 0 > /usr/sbin/policy-rc.d \
     && chmod -R +x ./*.sh
 
 RUN \
-	apt update -y && apt install -y wget \
+    apt update -y && apt install -y wget \
     && wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+bionic_all.deb \
     && dpkg -i zabbix-release_4.2-2+bionic_all.deb \
     && apt update -y \
